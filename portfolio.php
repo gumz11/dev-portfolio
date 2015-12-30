@@ -24,15 +24,16 @@ add_action("template_redirect", 'my_theme_redirect');
 
 
 function my_init() {
-	wp_enqueue_script('andrew-dev-portfolio', ANDREWDEVPORTFOLIO_PLUGIN_URL . 'portfolio.js', array('jquery'));
+	wp_enqueue_style('andrew-dev-portfolio', ANDREWDEVPORTFOLIO_PLUGIN_URL . 'style.min.css');
+	wp_enqueue_script('andrew-dev-portfolio', ANDREWDEVPORTFOLIO_PLUGIN_URL . 'scripts.min.js', array('jquery'));
 }
 
 function my_theme_redirect() {
 	global $wp;
 	$plugindir = dirname( __FILE__ );
 
-	if ($wp->query_vars["pagename"] == 'portfolio') {
-		$templatefilename = 'portfolio.php';
+	if (isset($wp->query_vars["pagename"]) && $wp->query_vars["pagename"] == 'portfolio') {
+		$templatefilename = 'page-portfolio.php';
 		if (file_exists(ANDREWDEVPORTFOLIO_PLUGIN_DIR . '/templates/' . $templatefilename)) {
 			$return_template = ANDREWDEVPORTFOLIO_PLUGIN_DIR . '/templates/' . $templatefilename;
 			do_theme_redirect($return_template);

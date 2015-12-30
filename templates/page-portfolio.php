@@ -13,7 +13,6 @@ get_header(); ?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 
-		<section class="andrew-portfolio">
 			<?php
 			// Start the loop.
 			while ( have_posts() ) : the_post();
@@ -22,17 +21,19 @@ get_header(); ?>
 				<header class="entry-header">
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				</header><!-- .entry-header -->
+
 				<div class="entry-content">
-				<?php
-					the_content();
-				?>
+					<section class="andrew-portfolio">
+					<?php
+						the_content();
+					?>
+					</section>
 				</div>
 
 				<?php
 				// End of the loop.
 			endwhile;
 			?>
-		</section>
 
 	</main><!-- .site-main -->
 
