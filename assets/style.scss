@@ -2,6 +2,28 @@
 	width: 100%!important;
 }
 
-section.andrew-portfolio div {
-	display: none;
+.fixed-1 {
+	position: fixed;
+	top: 100px;
+}
+
+section.andrew-portfolio {
+
+	div {
+		overflow-x: hidden;
+		margin-left: -100%;
+		transition: all 1000ms ease 0s;
+		min-height: 500px;
+	}
+
+	.fixed-2 {
+		position: fixed;
+		top: 200px;
+	}
+
+	.fixed-3 {
+		position: fixed;
+		top: 300px;
+		padding: 0;
+	}
 }
