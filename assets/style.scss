@@ -12,8 +12,16 @@ section.andrew-portfolio {
 	div {
 		overflow-x: hidden;
 		margin-left: -100%;
-		transition: all 1000ms ease 0s;
+		transition: all 600ms ease 0s;
 		min-height: 500px;
+
+		h4 {
+			transition: all 500ms ease 0s;
+		}
+
+		ul {
+			transition: all 550ms ease 0s;
+		}
 	}
 
 	.fixed-2 {
