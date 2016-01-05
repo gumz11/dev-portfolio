@@ -4,7 +4,7 @@
 
 .fixed-1 {
 	position: fixed;
-	top: 100px;
+	top: 50px;
 }
 
 section.andrew-portfolio {
@@ -16,23 +16,27 @@ section.andrew-portfolio {
 		min-height: 500px;
 		width: 87%;
 
-		h4 {
-			transition: all 500ms ease 0s;
+		ul {
+			transition: all 2000ms ease 0s;
+
+			li {
+				padding: 10px;
+			}
 		}
 
-		ul {
-			transition: all 550ms ease 0s;
+		img {
+			transition: all 1000ms ease 0s;
 		}
 	}
 
 	.fixed-2 {
 		position: fixed;
-		top: 200px;
+		top: 125px;
 	}
 
 	.fixed-3 {
 		position: fixed;
-		top: 300px;
+		top: 200px;
 		padding: 0;
 	}
 }

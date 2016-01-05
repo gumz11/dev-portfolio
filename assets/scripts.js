@@ -33,12 +33,9 @@
 					$(this).css('margin-left', 0);
 					$(this).css('margin-top', '');
 					$(this).addClass('fixed-3');
+					$(this).children('ul').css('margin-left', '5%');
 
 					$(this).prev('div').css('margin-bottom', $(this).height());
-
-					if ($(this).next().length) {
-						$(this).next().css('margin-top', $(this).height());
-					} 
 					
 				}
 
