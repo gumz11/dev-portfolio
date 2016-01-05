@@ -9,7 +9,6 @@
 	$(document).ready(function () {
 
 		var $divs = $('section.andrew-portfolio div');
-		var $title = $('header.entry-header h1.entry-title');
 		var $header = $('section.andrew-portfolio h1');
 
 		$(window).scroll(function (){
@@ -21,18 +20,18 @@
 				var thisTop = $(this).offset().top;
 				var thisBottom = $(this).offset().top + $(this).height();
 
-				if (scrollPos >= thisTop && scrollPos <= thisBottom && this.className.indexOf('fixed-3') === -1) {
+				if (scrollPos >= thisTop && scrollPos <= thisBottom && this.className.indexOf('fixed-2') === -1) {
 					
 					$header.text(this.className.replace('-',' ').toUpperCase());
 
 					$(this).siblings().css('margin-left', '');
 					$(this).siblings().css('margin-top', '');
 					$(this).siblings().css('margin-bottom', '');
-					$(this).siblings().removeClass('fixed-3');
+					$(this).siblings().removeClass('fixed-2');
 
 					$(this).css('margin-left', 0);
 					$(this).css('margin-top', '');
-					$(this).addClass('fixed-3');
+					$(this).addClass('fixed-2');
 					$(this).children('ul').css('margin-left', '5%');
 
 					$(this).prev('div').css('margin-bottom', $(this).height());
@@ -42,12 +41,10 @@
 			});
 
 			if (scrollPos > $(window).height() * 0.7) {
-				$title.addClass('fixed-1');
-				$header.addClass('fixed-2');
+				$header.addClass('fixed-1');
 			} else {
-				$title.removeClass('fixed-1');
-				$header.removeClass('fixed-2');
-				$divs.removeClass('fixed-3');
+				$header.removeClass('fixed-1');
+				$divs.removeClass('fixed-2');
 			}
 
 		});
