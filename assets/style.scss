@@ -68,28 +68,30 @@ section.andrew-portfolio {
         padding: 0;
     }
 
-    @media screen and (max-width: 920px) {
-        form {
-            display: none;
+    form {
+
+        input[type='text'], input[type='email'] {
+            min-width: 350px;
+            max-width: 500px;
+            width: 45%;
+            margin: 1%
         }
-    }
 
-    input[type='text'] {
-        min-width: 350px;
-        max-width: 500px;
-        width: 45%;
-        margin: 1%
-    }
+        input[type='submit'] {
+            margin: 1% 2%;
+            display: block;
+        }
 
-    input[type='submit'] {
-        margin: 1% 2%;
-        display: block;
-    }
+        input.digit {
+            width: 30px;
+            min-width: 30px;
+        }
 
-    textarea {
-        margin: 1%;
-        width: 94%;
-        max-width: 1030px;
-        height: 300px;
+        textarea {
+            margin: 1%;
+            width: 94%;
+            max-width: 1030px;
+            height: 300px;
+        }
     }
 }
