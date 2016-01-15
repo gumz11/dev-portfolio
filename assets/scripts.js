@@ -6,6 +6,12 @@
 (function ($) {
     "use strict";
 
+    if (!String.prototype.includes) {
+      String.prototype.includes = function() {
+        return String.prototype.indexOf.apply(this, arguments) !== -1;
+      };
+    }
+
     $(document).ready(function () {
 
         var $divs   = $('section.andrew-portfolio div');
