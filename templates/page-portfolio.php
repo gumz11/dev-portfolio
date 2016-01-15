@@ -11,31 +11,31 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 get_header(); ?>
 
 <div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+    <main id="main" class="site-main" role="main">
 
-			<?php
-			// Start the loop.
-			while ( have_posts() ) : the_post();
+            <?php
+            // Start the loop.
+            while ( have_posts() ) : the_post();
 
-				// Include the page content ?>
-				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				</header><!-- .entry-header -->
+                // Include the page content ?>
+                <header class="entry-header">
+                    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                </header><!-- .entry-header -->
 
-				<div class="entry-content">
-					<section class="andrew-portfolio">
-					<?php
-						the_content();
-					?>
-					</section>
-				</div>
+                <div class="entry-content">
+                    <section class="andrew-portfolio">
+                    <?php
+                        the_content();
+                    ?>
+                    </section>
+                </div>
 
-				<?php
-				// End of the loop.
-			endwhile;
-			?>
+                <?php
+                // End of the loop.
+            endwhile;
+            ?>
 
-	</main><!-- .site-main -->
+    </main><!-- .site-main -->
 
 </div><!-- .content-area -->
 

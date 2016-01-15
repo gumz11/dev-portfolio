@@ -28,18 +28,18 @@ function my_init() {
 }
 
 function my_theme_redirect() {
-	global $wp;
-	$plugindir = dirname( __FILE__ );
+    global $wp;
+    $plugindir = dirname( __FILE__ );
 
-	if (isset($wp->query_vars["pagename"]) && $wp->query_vars["pagename"] == 'portfolio') {
+    if (isset($wp->query_vars["pagename"]) && $wp->query_vars["pagename"] == 'portfolio') {
         my_init();
-		$templatefilename = 'page-portfolio.php';
-		if (file_exists(ANDREWDEVPORTFOLIO_PLUGIN_DIR . '/templates/' . $templatefilename)) {
-			$return_template = ANDREWDEVPORTFOLIO_PLUGIN_DIR . '/templates/' . $templatefilename;
-			include($return_template);
+        $templatefilename = 'page-portfolio.php';
+        if (file_exists(ANDREWDEVPORTFOLIO_PLUGIN_DIR . '/templates/' . $templatefilename)) {
+            $return_template = ANDREWDEVPORTFOLIO_PLUGIN_DIR . '/templates/' . $templatefilename;
+            include($return_template);
             die();
-		}
-	}
+        }
+    }
 }
 
 function my_contact_form() {

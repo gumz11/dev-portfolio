@@ -1,91 +1,91 @@
 .content-area {
-	width: 100%!important;
+    width: 100%!important;
 }
 
 section.andrew-portfolio {
 
-	div {
-		overflow-x: hidden;
-		margin-left: -150%;
-		transition: all 600ms ease 0s;
-		min-height: 750px;
-		width: 87%;
+    div {
+        overflow-x: hidden;
+        margin-left: -150%;
+        transition: all 600ms ease 0s;
+        min-height: 750px;
+        width: 87%;
 
-		ul {
-			width: 40%;
-			min-width: 300px;
-			display: inline-block;
-			vertical-align: top;
-			transition: all 2000ms ease 0s;
+        ul {
+            width: 40%;
+            min-width: 300px;
+            display: inline-block;
+            vertical-align: top;
+            transition: all 2000ms ease 0s;
 
-			li:nth-child(1) {
-				transition: all 1000ms ease 0s;
-			}
+            li:nth-child(1) {
+                transition: all 1000ms ease 0s;
+            }
 
-			li:nth-child(2) {
-				transition: all 1200ms ease 0s;
-			}
+            li:nth-child(2) {
+                transition: all 1200ms ease 0s;
+            }
 
-			li:nth-child(3) {
-				transition: all 1400ms ease 0s;
-			}
+            li:nth-child(3) {
+                transition: all 1400ms ease 0s;
+            }
 
-			li:nth-child(4) {
-				transition: all 1600ms ease 0s;
-			}
-			
-			li:nth-child(5) {
-				transition: all 1800ms ease 0s;
-			}
+            li:nth-child(4) {
+                transition: all 1600ms ease 0s;
+            }
+            
+            li:nth-child(5) {
+                transition: all 1800ms ease 0s;
+            }
 
-			li:nth-child(6) {
-				transition: all 2000ms ease 0s;
-			}
+            li:nth-child(6) {
+                transition: all 2000ms ease 0s;
+            }
 
-			li {
-				margin-left: -40%;
-				padding: 10px;
-			}
-		}
+            li {
+                margin-left: -40%;
+                padding: 10px;
+            }
+        }
 
-		img {
-			transition: all 1000ms ease 0s;
-		}
-	}
+        img {
+            transition: all 1000ms ease 0s;
+        }
+    }
 
-	.fixed-1 {
-		position: fixed;
-		top: 125px;
-	}
+    .fixed-1 {
+        position: fixed;
+        top: 125px;
+    }
 
-	.fixed-2 {
-		position: fixed;
-		top: 200px;
-		padding: 0;
-	}
+    .fixed-2 {
+        position: fixed;
+        top: 200px;
+        padding: 0;
+    }
 
-	@media screen and (max-width: 920px) {
-		form {
-			display: none;
-		}
-	}
+    @media screen and (max-width: 920px) {
+        form {
+            display: none;
+        }
+    }
 
-	input[type='text'] {
-		min-width: 350px;
-		max-width: 500px;
-		width: 45%;
-		margin: 1%
-	}
+    input[type='text'] {
+        min-width: 350px;
+        max-width: 500px;
+        width: 45%;
+        margin: 1%
+    }
 
-	input[type='submit'] {
-		margin: 1% 2%;
-		display: block;
-	}
+    input[type='submit'] {
+        margin: 1% 2%;
+        display: block;
+    }
 
-	textarea {
-		margin: 1%;
-		width: 94%;
-		max-width: 1030px;
-		height: 300px;
-	}
+    textarea {
+        margin: 1%;
+        width: 94%;
+        max-width: 1030px;
+        height: 300px;
+    }
 }
