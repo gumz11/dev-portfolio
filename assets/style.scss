@@ -4,11 +4,15 @@
 
 section.andrew-portfolio {
 
+    div:nth-child(2) {
+        margin-bottom: 750px;
+    }
+
     div {
         overflow-x: hidden;
         margin-left: -150%;
         transition: all 600ms ease 0s;
-        min-height: 750px;
+        height: 750px;
         width: 87%;
 
         ul {
