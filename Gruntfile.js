@@ -62,15 +62,15 @@ module.exports = function( grunt ) {
 
 		watch: {
 			styles: {
-				files: ['assets/sass/**/*.scss'],
+				files: ['assets/*.scss'],
 				tasks: ['sass', 'autoprefixer', 'cssmin'],
 				options: {
 					debounceDelay: 500
 				}
 			},
 			scripts: {
-				files: ['assets/js/src/**/*.js'],
-				tasks: ['jshint', 'concat', 'uglify'],
+				files: ['assets/*.js'],
+				tasks: ['jshint', 'uglify'],
 				options: {
 					debounceDelay: 500
 				}
