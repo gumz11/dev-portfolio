@@ -24,8 +24,9 @@ get_header(); ?>
                 <div class="entry-content">
                     <section class="andrew-portfolio">
                     <?php
-                        if (!$_POST) {
-                            the_content(); ?>
+                        if (!$_POST) { ?>
+                            <h1 class="title"></h1>
+                            <?php the_content(); ?>
                             <h4> Contact: </h4>
                             <form action="<?php echo the_permalink(); ?>" method='POST'>
                             <input name='action' value='email_send' type='hidden'>

@@ -15,7 +15,7 @@
     $(document).ready(function () {
 
         var $divs   = $('section.andrew-portfolio div');
-        var $header = $('section.andrew-portfolio h1');
+        var $header = $('section.andrew-portfolio h1.title');
 
         if ($divs.length) {
             var height = $divs.height();
