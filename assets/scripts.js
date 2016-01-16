@@ -41,7 +41,7 @@
                     $current.children('ul').children('li').css('margin-left', '5%');
                 }
 
-                if (scrollPos < $(window).height() * 0.8) {
+                if (scrollPos < height) {
                     $header.removeClass('fixed-1');
                     $current.removeClass('fixed-2');
                 } else if (scrollPos > $(document).height() - height) {
