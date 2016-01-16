@@ -44,11 +44,12 @@
                 if (scrollPos < $(window).height() * 0.8) {
                     $header.removeClass('fixed-1');
                     $current.removeClass('fixed-2');
-                } else if (scrollPos > $(document).height() - $(window).height() * 0.75) {
-                    $header.removeClass('fixed-1');
+                } else if (scrollPos > $(document).height() - height) {
+                    $header.css('margin-top','-150%');
                     $divs.last().css('margin-top','-150%');
                 } else {
                     $header.addClass('fixed-1');
+                    $header.css('margin-top','');
                     $divs.last().css('margin-top','');
                 }
 
