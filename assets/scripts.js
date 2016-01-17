@@ -100,9 +100,11 @@
 
             loadNavigation: function() {
                 var className = '';
+                var count = 0;
 
                 $divs.each(function () {
                     var div = document.createElement('div');
+
                     if (className !== this.className) {
                         div.textContent = this.className.replace('-',' ').toUpperCase();
                         div.className = 'pipe';
@@ -110,11 +112,22 @@
                         $nav[0].appendChild(div);
                         div = document.createElement('div');
                         div.className = 'point';
+                        div.id = count++;
                     } else {
                         div.className = 'point';
+                        div.id = count++;
                     }
+
                     $nav[0].appendChild(div);
                 });
+            },
+
+            scrollTo: function() {
+                var top = this.id * divHeight + divsOffset;
+
+                $('html, body').animate({
+                    scrollTop: top
+                }, 1000);
             }
 
         };
@@ -127,6 +140,8 @@
             Portfolio.loadNavigation();
             $(window).scroll(Portfolio.scroll);
         }
+
+        $('section.andrew-nav-menu div.point').click(Portfolio.scrollTo);
 
     });
 
