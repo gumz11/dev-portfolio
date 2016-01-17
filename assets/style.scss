@@ -104,6 +104,24 @@ section.andrew-nav-menu {
     p {
         font-size: 10px;
     }
+
+    div {
+        min-height: 25px;
+        font-size: 10px;
+        padding-top: 6px;
+    }
+
+    div.pipe {
+        background: url(assets/images/point1.png) right no-repeat;
+    }
+
+    div.point {
+        background: url(assets/images/point2.png) right no-repeat;
+    }
+
+    div.point-hover {
+        background: url(assets/images/point3.png) right no-repeat;
+    }
 }
 
 .andrew-fixed {

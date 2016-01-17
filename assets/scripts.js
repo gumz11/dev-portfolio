@@ -93,12 +93,18 @@
                 var className = '';
 
                 $divs.each(function () {
-                    var p = document.createElement('p');
+                    var div = document.createElement('div');
                     if (className !== this.className) {
-                        p.textContent = this.className.replace('-',' ').toUpperCase();
+                        div.textContent = this.className.replace('-',' ').toUpperCase();
+                        div.className = 'pipe';
                         className = this.className;
+                        $nav[0].appendChild(div);
+                        div = document.createElement('div');
+                        div.className = 'point';
+                    } else {
+                        div.className = 'point';
                     }
-                    $nav[0].appendChild(p);
+                    $nav[0].appendChild(div);
                 });
             }
 
