@@ -2,6 +2,16 @@
     width: 100%!important;
 }
 
+div.entry-content {
+    @media screen and (max-width: 880px) {
+        margin: 10%;
+    }
+
+    @media screen and (max-width: 680px) {
+        margin: 1%;
+    }
+}
+
 section.andrew-portfolio {
 
     div:nth-child(2) {
@@ -9,11 +19,15 @@ section.andrew-portfolio {
     }
 
     div {
-        overflow-x: hidden;
+        overflow: hidden;
         margin-left: -150%;
         transition: all 600ms ease 0s;
         height: 750px;
-        width: 87%;
+        width: 80%;
+
+        @media screen and (max-width: 880px) {
+            width: 70%;
+        }
 
         ul {
             width: 40%;
@@ -101,6 +115,10 @@ section.andrew-nav-menu {
     display: none;
     right: 50px;
 
+    @media screen and (max-width: 680px) {
+        right: 10px;
+    }
+
     p {
         font-size: 10px;
     }
@@ -116,6 +134,7 @@ section.andrew-nav-menu {
     }
 
     div.point {
+        cursor: pointer;
         background: url(assets/images/point2.png) right no-repeat;
     }
 
@@ -129,4 +148,8 @@ section.andrew-nav-menu {
     position: fixed;
     text-align: right;
     top: 50px;
+
+    @media screen and (max-width: 680px) {
+        top: 0;
+    }
 }

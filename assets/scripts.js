@@ -61,6 +61,15 @@
         }
 
         function navCheck() {
+            var $navDivs = $('section.andrew-nav-menu div.point, section.andrew-nav-menu div.point-hover');
+
+            $navDivs.addClass('point');
+            $navDivs.removeClass('point-hover');
+
+            if ($navDivs.eq(divIndex).length) {
+                $navDivs.eq(divIndex)[0].className = 'point-hover';
+            }
+
             if (scrollPos > divsOffset) {
                 $nav.addClass('andrew-fixed');
             } else {
