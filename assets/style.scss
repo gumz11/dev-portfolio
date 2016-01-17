@@ -66,6 +66,7 @@ section.andrew-portfolio {
         position: fixed;
         top: 125px;
         padding: 0;
+        margin-left: 0;
     }
 
     form {
@@ -94,4 +95,20 @@ section.andrew-portfolio {
             height: 300px;
         }
     }
+}
+
+section.andrew-nav-menu {
+    display: none;
+    right: 50px;
+
+    p {
+        font-size: 10px;
+    }
+}
+
+.andrew-fixed {
+    display: block!important;
+    position: fixed;
+    text-align: right;
+    top: 50px;
 }

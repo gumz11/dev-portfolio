@@ -22,6 +22,8 @@ get_header(); ?>
                 </header><!-- .entry-header -->
 
                 <div class="entry-content">
+                    <section class="andrew-nav-menu">
+                    </section>
                     <section class="andrew-portfolio">
                     <?php
                         if (!$_POST) { ?>
