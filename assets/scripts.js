@@ -123,7 +123,7 @@
             },
 
             scrollTo: function() {
-                var top = this.id * divHeight + divsOffset;
+                var top = this.id * divHeight + divsOffset + 5;
 
                 $('html, body').animate({
                     scrollTop: top
