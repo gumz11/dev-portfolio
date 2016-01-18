@@ -89,7 +89,11 @@ section.andrew-portfolio {
             min-width: 350px;
             max-width: 500px;
             width: 45%;
-            margin: 1%
+            margin: 1%;
+
+            @media screen and (max-width: 680px) {
+                min-width: 90%;
+            }
         }
 
         input[type='submit'] {
