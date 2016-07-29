@@ -47,6 +47,7 @@ section.andrew-portfolio {
         ul {
             width: 40%;
             min-width: 300px;
+            max-width: 450px;
             display: inline-block;
             vertical-align: top;
             transition: all 2000ms ease 0s;
@@ -81,6 +82,27 @@ section.andrew-portfolio {
 
                 @media screen and (max-width: 880px) {
                     padding: 0;
+                }
+
+                span {
+                    border-radius: 10px;
+                    display: inline-block;
+                    padding: 10px;
+                }
+
+                span.skill-bar-1 {
+                    background: linear-gradient(to right, white, green);
+                    width: 100%;
+                }
+
+                span.skill-bar-2 {
+                    background: linear-gradient(to right, white, green);
+                    width: 67%;
+                }
+
+                span.skill-bar-3 {
+                    background: linear-gradient(to right, white, green);
+                    width: 45%;
                 }
             }
         }
@@ -144,10 +166,15 @@ section.andrew-portfolio {
 
 section.andrew-nav-menu {
     display: none;
-    right: 50px;
+    right: 10%;
 
-    @media screen and (max-width: 680px) {
-        right: 10px;
+
+    @media screen and (max-width: 980px) {
+        right: 5%;
+
+        div.pipe {
+            opacity: 0;
+        }
     }
 
     p {
@@ -158,6 +185,7 @@ section.andrew-nav-menu {
         min-height: 25px;
         font-size: 10px;
         padding-top: 6px;
+        padding-right: 20px;
     }
 
     div.pipe {
