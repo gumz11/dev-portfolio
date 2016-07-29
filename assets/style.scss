@@ -24,6 +24,7 @@ section.andrew-portfolio {
         transition: all 600ms ease 0s;
         height: 750px;
         width: 80%;
+        max-width: 1150px;
 
         @media screen and (max-width: 880px) {
             width: 70%;
@@ -34,7 +35,8 @@ section.andrew-portfolio {
             height: 550px;
 
             h4 {
-                width: 70%;
+                font-size: 0.8em;
+                width: 90%;
                 margin: 10px;
             }
 
@@ -82,6 +84,7 @@ section.andrew-portfolio {
 
                 @media screen and (max-width: 880px) {
                     padding: 0;
+                    margin: 5px;
                 }
 
                 span {
@@ -96,13 +99,21 @@ section.andrew-portfolio {
                 }
 
                 span.skill-bar-2 {
-                    background: linear-gradient(to right, white, green);
+                    background: linear-gradient(to right, white, #5bad5b);
                     width: 67%;
+
+                    @media screen and (max-width: 880px) {
+                        width: 82%;
+                    }
                 }
 
                 span.skill-bar-3 {
-                    background: linear-gradient(to right, white, green);
+                    background: linear-gradient(to right, white, #add6ad);
                     width: 45%;
+
+                    @media screen and (max-width: 880px) {
+                        width: 70%;
+                    }
                 }
             }
         }
