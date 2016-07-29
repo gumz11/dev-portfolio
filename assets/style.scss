@@ -3,26 +3,35 @@
 }
 
 div.entry-content {
+    margin-top: 300px;
+    
     @media screen and (max-width: 880px) {
         margin: 10%;
+        margin-top: 300px;
     }
 
     @media screen and (max-width: 680px) {
         margin: 1%;
+        margin-top: 300px;
     }
 }
 
 section.andrew-portfolio {
 
-    div:nth-child(2) {
-        margin-bottom: 750px;
+    h1 {
+        top: 300px;
+        transition: all 600ms ease 0s;
+    }
+
+    div.showing {
+        margin-left: 0;
     }
 
     div {
         overflow: hidden;
         margin-left: -150%;
         transition: all 600ms ease 0s;
-        height: 750px;
+        height: 700px;
         width: 80%;
         max-width: 1150px;
 
@@ -79,7 +88,7 @@ section.andrew-portfolio {
             }
 
             li {
-                margin-left: -40%;
+                //margin-left: -40%;
                 padding: 10px;
 
                 @media screen and (max-width: 880px) {
@@ -132,17 +141,6 @@ section.andrew-portfolio {
         }
     }
 
-    .fixed-2 {
-        position: fixed;
-        top: 125px;
-        padding: 0;
-        margin-left: 0;
-
-        @media screen and (max-width: 680px) {
-            top: 60px;
-        }
-    }
-
     form {
 
         input[type='text'], input[type='email'] {
@@ -176,6 +174,7 @@ section.andrew-portfolio {
 }
 
 section.andrew-nav-menu {
+    transition: all 600ms ease 0s;
     display: none;
     right: 10%;
 

@@ -23,36 +23,27 @@
         var scrollPos;
 
         function updateScroll() {
-            scrollPos = $(window).scrollTop();
+            scrollPos = $(window).scrollTop() + $(window).height() * 0.75;
         }
 
         function divsCheck() {
             divIndex = parseInt((scrollPos - divsOffset) / divHeight);
             var $current = $divs.eq(divIndex);
 
-            if ($current.length && !$current[0].className.includes('fixed-2')) {
+            if ($current.length) {
                 $header.text($current[0].className.replace('-',' ').toUpperCase());
 
-                $current.siblings().removeClass('fixed-2');
-                $current.addClass('fixed-2');
-                
+                $current.css('margin-left', '0');
                 $current.children('ul').css('margin-left', '5%');
                 $current.children('ul').children('li').css('margin-left', '5%');
             }
 
-            if (scrollPos < divsOffset) {
-                $current.removeClass('fixed-2');
-            } else if (scrollPos > divHeight * $divs.length) {
-                $divs.last().css('margin-top','-250%');
-            } else {
-                $divs.last().css('margin-top','');
-            }
         }
 
         function headerCheck() {
             if (scrollPos < divsOffset) {
                 $header.removeClass('fixed-1');
-            } else if (scrollPos > divHeight * $divs.length) {
+            } else if (scrollPos > divHeight * $divs.length + divsOffset) {
                 $header.css('margin-top','-250%');
             } else {
                 $header.addClass('fixed-1');
@@ -70,7 +61,7 @@
                 $navDivs.eq(divIndex)[0].className = 'point-hover';
             }
 
-            if (scrollPos < divsOffset || scrollPos > divHeight * $divs.length) {
+            if (scrollPos < divsOffset || scrollPos > divHeight * $divs.length + divsOffset) {
                 $nav.removeClass('andrew-fixed');
             } else {
                 $nav.addClass('andrew-fixed');
@@ -86,7 +77,7 @@
 
                 if ($divs.length) {
                     divHeight = $divs.height();
-                    divsOffset = $divs.eq(0).offset().top - 50;
+                    divsOffset = $divs.eq(0).offset().top;
                     return true;
                 }
             },
@@ -123,7 +114,7 @@
             },
 
             scrollTo: function() {
-                var top = this.id * divHeight + divsOffset + 5;
+                var top = $divs.eq(this.id).offset().top - 125;
 
                 $('html, body').animate({
                     scrollTop: top
