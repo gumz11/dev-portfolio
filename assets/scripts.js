@@ -41,7 +41,7 @@
         }
 
         function headerCheck() {
-            if (scrollPos < divsOffset) {
+            if (scrollPos - $(window).height() / 4 < divsOffset) {
                 $header.removeClass('fixed-1');
             } else if (scrollPos > divHeight * $divs.length + divsOffset) {
                 $header.css('margin-top','-250%');
@@ -61,7 +61,7 @@
                 $navDivs.eq(divIndex)[0].className = 'point-hover';
             }
 
-            if (scrollPos < divsOffset || scrollPos > divHeight * $divs.length + divsOffset) {
+            if (scrollPos - $(window).height() / 4 < divsOffset || scrollPos > divHeight * $divs.length + divsOffset) {
                 $nav.removeClass('andrew-fixed');
             } else {
                 $nav.addClass('andrew-fixed');
