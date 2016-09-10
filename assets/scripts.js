@@ -78,7 +78,6 @@
                 if ($divs.length) {
                     divHeight = $divs.height();
                     divsOffset = $divs.eq(0).offset().top;
-                    this.loadNavigation();
                     return true;
                 }
             },
@@ -130,6 +129,9 @@
     $(document).ready(function () {
 
         if (Portfolio.init()) {
+            
+            Portfolio.loadNavigation();
+            Portfolio.scroll();
             
             $(window).scroll(Portfolio.scroll);
 
