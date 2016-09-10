@@ -203,19 +203,8 @@ section.andrew-nav-menu {
         }
     }
 
-    /*div.pipe {
-        cursor: pointer;
-        background: url(assets/images/point1.png) right no-repeat;
-        
-    }
-
-    div.point {
-        cursor: pointer;
-        background: url(assets/images/point2.png) right no-repeat;
-    }*/
-
     div.point-hover {
-        background: url(assets/images/point3.png) right no-repeat;
+        border-right: 5px dotted black;
     }
 }
 
