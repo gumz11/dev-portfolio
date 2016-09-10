@@ -176,8 +176,7 @@ section.andrew-portfolio {
 section.andrew-nav-menu {
     transition: all 600ms ease 0s;
     display: none;
-    right: 10%;
-
+    right: 3%;
 
     @media screen and (max-width: 980px) {
         right: 5%;
@@ -195,17 +194,25 @@ section.andrew-nav-menu {
         min-height: 25px;
         font-size: 10px;
         padding-top: 6px;
-        padding-right: 20px;
+        padding-right: 5px;
+        cursor: pointer;
+        border-right: 5px solid #1a1a1a;
+        background: transparent;
+        &:hover {
+            background: linear-gradient(to right, transparent, #ccc);
+        }
     }
 
-    div.pipe {
+    /*div.pipe {
+        cursor: pointer;
         background: url(assets/images/point1.png) right no-repeat;
+        
     }
 
     div.point {
         cursor: pointer;
         background: url(assets/images/point2.png) right no-repeat;
-    }
+    }*/
 
     div.point-hover {
         background: url(assets/images/point3.png) right no-repeat;

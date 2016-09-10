@@ -99,6 +99,7 @@
                     if (className !== this.className) {
                         div.textContent = this.className.replace('-',' ').toUpperCase();
                         div.className = 'pipe';
+                        div.id = count;
                         className = this.className;
                         $nav[0].appendChild(div);
                         div = document.createElement('div');
@@ -128,11 +129,19 @@
     $(document).ready(function () {
 
         if (Portfolio.init()) {
+            
             Portfolio.loadNavigation();
+            
             $(window).scroll(Portfolio.scroll);
+
+            $(window).resize(function () {
+                Portfolio.init();
+                Portfolio.scroll();
+            });
+        
         }
 
-        $('section.andrew-nav-menu div.point').click(Portfolio.scrollTo);
+        $('section.andrew-nav-menu div').click(Portfolio.scrollTo);
 
     });
 
