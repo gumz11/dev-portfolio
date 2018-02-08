@@ -13,7 +13,7 @@
     }
 
     var Portfolio = (function () {
-        
+
         var $divs;
         var $header;
         var $nav;
@@ -41,7 +41,7 @@
         }
 
         function headerCheck() {
-            if (scrollPos - $(window).height() / 4 < divsOffset) {
+            if (scrollPos < $(window).height()) {
                 $header.removeClass('fixed-1');
             } else if (scrollPos > divHeight * $divs.length + divsOffset) {
                 $header.css('margin-top','-250%');
@@ -61,7 +61,7 @@
                 $navDivs.eq(divIndex)[0].className = 'point-hover';
             }
 
-            if (scrollPos - $(window).height() / 4 < divsOffset || scrollPos > divHeight * $divs.length + divsOffset) {
+            if (scrollPos < $(window).height() || scrollPos > divHeight * $divs.length + divsOffset) {
                 $nav.removeClass('andrew-fixed');
             } else {
                 $nav.addClass('andrew-fixed');
@@ -69,7 +69,7 @@
         }
 
         return {
-            
+
             init: function() {
                 $divs   = $('section.andrew-portfolio div');
                 $header = $('section.andrew-portfolio h1.title');
@@ -129,17 +129,17 @@
     $(document).ready(function () {
 
         if (Portfolio.init()) {
-            
+
             Portfolio.loadNavigation();
             Portfolio.scroll();
-            
+
             $(window).scroll(Portfolio.scroll);
 
             $(window).resize(function () {
                 Portfolio.init();
                 Portfolio.scroll();
             });
-        
+
         }
 
         $('section.andrew-nav-menu div').click(Portfolio.scrollTo);

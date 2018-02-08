@@ -3,20 +3,24 @@
 }
 
 div.entry-content {
-    margin-top: 300px;
-    
+
+
     @media screen and (max-width: 880px) {
         margin: 10%;
-        margin-top: 300px;
+
     }
 
     @media screen and (max-width: 680px) {
         margin: 1%;
-        margin-top: 300px;
+
     }
 }
 
 section.andrew-portfolio {
+
+    h1, h2, h3, h4, h5, h6, li, p {
+        font-family: Montserrat, "Helvetica Neue", sans-serif;
+    }
 
     h1 {
         top: 300px;
@@ -32,7 +36,6 @@ section.andrew-portfolio {
         margin-left: -150%;
         transition: all 600ms ease 0s;
         height: 700px;
-        width: 80%;
         max-width: 1150px;
 
         @media screen and (max-width: 880px) {
@@ -78,7 +81,7 @@ section.andrew-portfolio {
             li:nth-child(4) {
                 transition: all 1600ms ease 0s;
             }
-            
+
             li:nth-child(5) {
                 transition: all 1800ms ease 0s;
             }
@@ -134,10 +137,15 @@ section.andrew-portfolio {
 
     .fixed-1 {
         position: fixed;
-        top: 50px;
+        top: 0;
+        padding: 50px 0 10px 0;
+        margin-left: -5%;
+        width: 65%;
+        background: white;
 
         @media screen and (max-width: 680px) {
-            top: 25px;
+            width: 80%;
+            margin-left: 0;
         }
     }
 
@@ -191,6 +199,7 @@ section.andrew-nav-menu {
     }
 
     div {
+        font-family: Montserrat, "Helvetica Neue", sans-serif;
         min-height: 25px;
         font-size: 10px;
         padding-top: 6px;
@@ -204,7 +213,7 @@ section.andrew-nav-menu {
     }
 
     div.point-hover {
-        border-right: 5px dotted black;
+        border-right: 5px dashed black;
     }
 }
 
