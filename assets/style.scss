@@ -23,15 +23,21 @@ section.andrew-portfolio {
     }
 
     h1 {
-        top: 300px;
-        transition: all 600ms ease 0s;
+
     }
 
     div.showing {
         margin-left: 0;
     }
 
+    @media screen and (max-width: 600px) {
+        h4 {
+            margin: 10px;
+        }
+    }
+
     div {
+        top: 300px;
         overflow: hidden;
         margin-left: -150%;
         transition: all 600ms ease 0s;
@@ -49,6 +55,10 @@ section.andrew-portfolio {
             h4 {
                 font-size: 0.8em;
                 width: 90%;
+                margin: 10px;
+            }
+
+            i, strong {
                 margin: 10px;
             }
 
@@ -136,6 +146,7 @@ section.andrew-portfolio {
     }
 
     .fixed-1 {
+        transition: all 500ms ease 0s;
         position: fixed;
         top: 0;
         padding: 50px 0 10px 0;
@@ -144,7 +155,8 @@ section.andrew-portfolio {
         background: white;
 
         @media screen and (max-width: 680px) {
-            width: 80%;
+            width: 92%;
+            padding: 25px 0 10px 10px;
             margin-left: 0;
         }
     }
@@ -186,11 +198,12 @@ section.andrew-nav-menu {
     display: none;
     right: 3%;
 
+
     @media screen and (max-width: 980px) {
-        right: 5%;
+        opacity: 0.5;
 
         div.pipe {
-            opacity: 0;
+
         }
     }
 
@@ -223,7 +236,8 @@ section.andrew-nav-menu {
     text-align: right;
     top: 50px;
 
-    @media screen and (max-width: 680px) {
-        top: 0;
+    @media screen and (max-width: 980px) {
+        top: 10px;
+        z-index: 2;
     }
 }

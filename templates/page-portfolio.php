@@ -34,9 +34,9 @@ get_header(); ?>
                             <input name='action' value='email_send' type='hidden'>
                             <input name='from' type='text' placeholder='Name' required/>
                             <input name='email' type='email' placeholder='Email' required/>
-                            <textarea name='message' required></textarea>
+                            <textarea name='message' placeholder='Hello Andrew, I love your portfolio! etc. etc.' required></textarea>
                             <br>
-                            <input class='digit' name='human' type='text' placeholder='0' /> + 2 = 6
+                            <input class='digit' name='human' type='text' placeholder='4' /> + 2 = 6
                             <input type='submit' value='Send Message' />
                             <?php wp_nonce_field('email_send'); ?>
                             </form>
