@@ -17,35 +17,58 @@
         var $divs;
         var $header;
         var $nav;
-        var divIndex;
-        var divHeight;
-        var divsOffset;
+        var $current;
         var scrollPos;
 
-        function updateScroll() {
-            scrollPos = $(window).scrollTop() + $(window).height() * 0.75;
+        var $down;
+        var downInterval;
+
+        function animate($c) {
+            $c.css('margin-left', '0');
+            $c.children('ul').css('margin-left', '5%');
+            $c.children('ul').children('li').css('margin-left', '5%');
         }
 
-        function divsCheck() {
-            divIndex = parseInt((scrollPos - divsOffset) / divHeight);
-            var $current = $divs.eq(divIndex);
+        function updateScroll() {
+            scrollPos = $(window).scrollTop() + $(window).height() * 0.5;
+        }
 
-            if ($current.length) {
-                $header.text($current[0].className.replace('-',' ').toUpperCase());
+        function divChanged() {
+            var $div;
 
-                $current.css('margin-left', '0');
-                $current.children('ul').css('margin-left', '5%');
-                $current.children('ul').children('li').css('margin-left', '5%');
+            if (scrollPos > $divs.last().offset().top + $divs.last().height()) { 
+                $div = 'end';
+            } else if (scrollPos < $divs.first().offset().top) {
+                $div = 'start';
+            } else {
+                $div = $($divs.get().reverse().find(function(d) { 
+                    return $(d).offset().top < scrollPos; 
+                }));
             }
 
+            if ($current === $div || $($current).is($div)) {
+                return false;
+            }
+
+            $current = $div;
+            if ($($current).length) {
+                animate($current);
+                clearInterval(downInterval);
+                $down.remove();
+            }
+
+            return true;
         }
 
         function headerCheck() {
-            if (scrollPos < $(window).height()) {
+            if ($current === 'start') {
                 $header.removeClass('fixed-1');
-            } else if (scrollPos > divHeight * $divs.length + divsOffset) {
+                $header.css('display', 'none');
+            } else if ($current === 'end') {
                 $header.css('margin-top','-250%');
             } else {
+                $header.text($current[0].className.replace('-',' ').toUpperCase());
+                $header.css('display','');
                 $header.addClass('fixed-1');
                 $header.css('margin-top','');
             }
@@ -57,14 +80,12 @@
             $navDivs.addClass('point');
             $navDivs.removeClass('point-hover');
 
-            if ($navDivs.eq(divIndex).length) {
-                $navDivs.eq(divIndex)[0].className = 'point-hover';
-            }
-
-            if (scrollPos < $(window).height() || scrollPos > divHeight * $divs.length + divsOffset) {
-                $nav.removeClass('andrew-fixed');
-            } else {
+            if ($($current).length) {
                 $nav.addClass('andrew-fixed');
+                var i = $divs.get().findIndex(function(d) { return $current.is(d); });
+                $navDivs.eq(i)[0].className = 'point-hover';
+            } else {
+                $nav.removeClass('andrew-fixed');
             }
         }
 
@@ -74,19 +95,23 @@
                 $divs   = $('section.andrew-portfolio div');
                 $header = $('section.andrew-portfolio h1.title');
                 $nav    = $('section.andrew-nav-menu');
+                $down   = $('p.portfolio-down');
 
-                if ($divs.length) {
-                    divHeight = $divs.height();
-                    divsOffset = $divs.eq(0).offset().top;
-                    return true;
-                }
+                $down.pos = 5;
+                downInterval = setInterval(function() {
+                    $down.pos *= -1;
+                    $down.css('margin-top', $down.pos);
+                }, 600);
+
+                return $divs.length > 0;
             },
 
             scroll: function() {
                 updateScroll();
-                divsCheck();
-                headerCheck();
-                navCheck();
+                if (divChanged()) {
+                    headerCheck();
+                    navCheck();
+                }
             },
 
             loadNavigation: function() {
@@ -109,17 +134,17 @@
                         div.className = 'point';
                         div.id = count++;
                     }
-
+                    $(div).click(Portfolio.scrollTo);
                     $nav[0].appendChild(div);
                 });
             },
 
             scrollTo: function() {
-                var top = $divs.eq(this.id).offset().top - 125;
+                var top = $divs.eq(this.id).offset().top - $(window).height() * 0.25;
 
                 $('html, body').animate({
                     scrollTop: top
-                }, 1000);
+                }, 500);
             }
 
         };
@@ -129,20 +154,16 @@
     $(document).ready(function () {
 
         if (Portfolio.init()) {
-
             Portfolio.loadNavigation();
             Portfolio.scroll();
 
             $(window).scroll(Portfolio.scroll);
-
             $(window).resize(function () {
-                Portfolio.init();
-                Portfolio.scroll();
+                if (Portfolio.init()) {
+                    Portfolio.scroll();
+                }
             });
-
         }
-
-        $('section.andrew-nav-menu div').click(Portfolio.scrollTo);
 
     });
 
