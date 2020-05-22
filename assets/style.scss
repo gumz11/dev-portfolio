@@ -18,12 +18,21 @@ div.entry-content {
 
 section.andrew-portfolio {
 
+    padding: 0;
+
     h1, h2, h3, h4, h5, h6, li, p {
         font-family: Montserrat, "Helvetica Neue", sans-serif;
     }
 
     h1 {
 
+    }
+
+    p.portfolio-down {
+        text-align: center;
+        transition: all 200ms ease 0s;
+        span {
+        }
     }
 
     div.showing {
@@ -38,10 +47,11 @@ section.andrew-portfolio {
 
     div {
         top: 300px;
+        margin-top: 300px;
         overflow: hidden;
         margin-left: -150%;
         transition: all 600ms ease 0s;
-        height: 700px;
+        min-height: 700px;
         max-width: 1150px;
 
         @media screen and (max-width: 880px) {
@@ -150,10 +160,13 @@ section.andrew-portfolio {
         position: fixed;
         top: 0;
         padding: 50px 0 10px 0;
-        margin-left: -5%;
-        width: 65%;
+        margin: 0 0 0 -5%;
+        width: 100%;
         background: white;
 
+        @media screen and (max-width: 1080px) {
+            margin: 0;
+        }
         @media screen and (max-width: 680px) {
             width: 92%;
             padding: 25px 0 10px 10px;
@@ -235,9 +248,11 @@ section.andrew-nav-menu {
     position: fixed;
     text-align: right;
     top: 50px;
+    padding: 0;
+    z-index: 2;
+    width: 150px!important;
 
     @media screen and (max-width: 980px) {
         top: 20px;
-        z-index: 2;
     }
 }

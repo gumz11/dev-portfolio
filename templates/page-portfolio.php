@@ -11,14 +11,13 @@ get_header(); ?>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-
             <?php
             // Start the loop.
             while ( have_posts() ) : the_post();
 
                 // Include the page content ?>
                 <header class="entry-header">
-                    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+                    <?php //the_title( '<h1 class="entry-title">', '</h1>' ); ?>
                 </header><!-- .entry-header -->
 
                 <div class="entry-content">
@@ -28,6 +27,7 @@ get_header(); ?>
                     <?php
                         if (!$_POST) { ?>
                             <h1 class="title"></h1>
+                            <p class="portfolio-down"> <span>DOWN ARROW</span> </p>
                             <?php the_content(); ?>
                             <h4> Contact: </h4>
                             <form action="<?php echo the_permalink(); ?>" method='POST'>
@@ -55,4 +55,5 @@ get_header(); ?>
 
 </div><!-- .content-area -->
 
+<?php get_template_part( 'template-parts/footer-menus-widgets' ); ?>
 <?php get_footer(); ?>

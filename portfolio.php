@@ -36,7 +36,7 @@ class Portfolio {
     public static function my_theme_redirect() {
         global $wp;
 
-        if (isset($wp->query_vars["pagename"]) && $wp->query_vars["pagename"] == 'portfolio') {
+        if (isset($wp->query_vars["pagename"]) && $wp->query_vars["pagename"] == 'career') {
             self::my_init();
             $templatefilename = 'page-portfolio.php';
             if (file_exists(plugin_dir_path(__FILE__) . '/templates/' . $templatefilename)) {
