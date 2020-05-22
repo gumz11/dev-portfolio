@@ -36,9 +36,9 @@
         function divChanged() {
             var $div;
 
-            if (scrollPos > $divs.last().offset().top + $divs.last().height()) { 
+            if (scrollPos >= $divs.last().offset().top + $divs.last().height()) { 
                 $div = 'end';
-            } else if (scrollPos < $divs.first().offset().top) {
+            } else if (scrollPos <= $divs.first().offset().top) {
                 $div = 'start';
             } else {
                 $div = $($divs.get().reverse().find(function(d) { 
@@ -56,7 +56,6 @@
                 clearInterval(downInterval);
                 $down.remove();
             }
-
             return true;
         }
 
@@ -109,6 +108,7 @@
             scroll: function() {
                 updateScroll();
                 if (divChanged()) {
+                    console.log($current);
                     headerCheck();
                     navCheck();
                 }
