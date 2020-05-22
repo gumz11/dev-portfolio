@@ -9,7 +9,7 @@ cd wp-content\plugins\
 git clone https://github.com/gumz11/dev-portfolio.git
 ```
 
-Next, define a Wordpress page with the name `Career`. 
+Next, define a Wordpress page with the slug `dev-portfolio`. 
 
 Finally, add content to your page. This plugin will group each section by `<div>` tags. 
 The title of the section is determined by the `div`'s class. 
@@ -32,4 +32,4 @@ Each section is broken into two sub sections by `ul` tag. Use `h4` and `h5` tags
 ```
 
 ## Notes
-This works with the TwentyTwenty Wordpress theme. Here is a [live example](http://ajgmez.com/portfolio/).
+This works with the TwentyTwenty Wordpress theme. Here is a [live example](http://ajgmez.com/dev-portfolio/).
