@@ -54,35 +54,31 @@
             if ($($current).length) {
                 animate($current);
                 clearInterval(downInterval);
-                $down.remove();
+                $down.css('display', 'none');
             }
             return true;
         }
 
         function headerCheck() {
             if ($current === 'start') {
-                $header.removeClass('fixed-1');
                 $header.css('display', 'none');
             } else if ($current === 'end') {
                 $header.css('margin-top','-250%');
             } else {
-                $header.text($current[0].className.replace('-',' ').toUpperCase());
+                $header.text($current[0].className.replace(/-/g,' ').toUpperCase());
                 $header.css('display','');
-                $header.addClass('fixed-1');
                 $header.css('margin-top','');
             }
         }
 
         function navCheck() {
-            var $navDivs = $('section.andrew-nav-menu div.point, section.andrew-nav-menu div.point-hover');
+            var $navDivs = $('section.andrew-nav-menu div.point');
 
-            $navDivs.addClass('point');
             $navDivs.removeClass('point-hover');
-
             if ($($current).length) {
                 $nav.addClass('andrew-fixed');
                 var i = $divs.get().findIndex(function(d) { return $current.is(d); });
-                $navDivs.eq(i)[0].className = 'point-hover';
+                $navDivs.eq(i).addClass('point-hover');
             } else {
                 $nav.removeClass('andrew-fixed');
             }
@@ -96,11 +92,13 @@
                 $nav    = $('section.andrew-nav-menu');
                 $down   = $('p.portfolio-down');
 
-                $down.pos = 5;
-                downInterval = setInterval(function() {
-                    $down.pos *= -1;
-                    $down.css('margin-top', $down.pos);
-                }, 600);
+                if (!downInterval) {
+                    $down.pos = -25;
+                    downInterval = setInterval(function() {
+                        $down.pos *= -1;
+                        $down.css('margin-top', $down.pos);
+                    }, 600);
+                }
 
                 return $divs.length > 0;
             },
@@ -108,7 +106,6 @@
             scroll: function() {
                 updateScroll();
                 if (divChanged()) {
-                    console.log($current);
                     headerCheck();
                     navCheck();
                 }
@@ -126,7 +123,10 @@
                         div.className = 'pipe';
                         div.id = count;
                         className = this.className;
+
+                        $(div).click(Portfolio.scrollTo);
                         $nav[0].appendChild(div);
+
                         div = document.createElement('div');
                         div.className = 'point';
                         div.id = count++;
@@ -144,7 +144,7 @@
 
                 $('html, body').animate({
                     scrollTop: top
-                }, 500);
+                }, 200);
             }
 
         };

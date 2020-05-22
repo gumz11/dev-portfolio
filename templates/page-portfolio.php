@@ -26,8 +26,8 @@ get_header(); ?>
                     <section class="andrew-portfolio">
                     <?php
                         if (!$_POST) { ?>
-                            <h1 class="title"></h1>
-                            <p class="portfolio-down"> <span>DOWN ARROW</span> </p>
+                            <h1 class="title fixed-1"></h1>
+                            <p class="portfolio-down"> <span class="dashicons dashicons-arrow-down-alt"></span> </p>
                             <?php the_content(); ?>
                             <h4> Contact: </h4>
                             <form action="<?php echo the_permalink(); ?>" method='POST'>
@@ -35,8 +35,7 @@ get_header(); ?>
                             <input name='from' type='text' placeholder='Name' required/>
                             <input name='email' type='email' placeholder='Email' required/>
                             <textarea name='message' placeholder='Hello Andrew, I love your portfolio! etc. etc.' required></textarea>
-                            <br>
-                            <input class='digit' name='human' type='text' placeholder='4' /> + 2 = 6
+                            <span><input class='digit' name='human' type='number' placeholder='4' /> + 2 = 6</span>
                             <input type='submit' value='Send Message' />
                             <?php wp_nonce_field('email_send'); ?>
                             </form>

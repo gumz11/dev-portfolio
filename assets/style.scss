@@ -31,7 +31,10 @@ section.andrew-portfolio {
     p.portfolio-down {
         text-align: center;
         transition: all 200ms ease 0s;
+        margin: 0;
         span {
+            font-size: 10rem;
+            width: auto;
         }
     }
 
@@ -188,13 +191,14 @@ section.andrew-portfolio {
         }
 
         input[type='submit'] {
-            margin: 1% 2%;
+            margin: 1%;
             display: block;
         }
 
         input.digit {
-            width: 30px;
-            min-width: 30px;
+            margin: 1%;
+            max-width: 7rem;
+            display: inline;
         }
 
         textarea {
