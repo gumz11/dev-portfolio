@@ -27,7 +27,7 @@ get_header(); ?>
                     <?php
                         if (!$_POST) { ?>
                             <h1 class="title fixed-1"></h1>
-                            <p class="portfolio-down"> <span class="dashicons dashicons-arrow-down-alt"></span> </p>
+                            <p class="portfolio-down"> <span class="down-arrow"></span> </p>
                             <?php the_content(); ?>
                             <h4> Contact: </h4>
                             <form action="<?php echo the_permalink(); ?>" method='POST'>
