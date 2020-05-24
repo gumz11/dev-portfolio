@@ -29,16 +29,7 @@ get_header(); ?>
                             <h1 class="title fixed-1"></h1>
                             <p class="portfolio-down"> <span class="down-arrow"></span> </p>
                             <?php the_content(); ?>
-                            <h4> Contact: </h4>
-                            <form action="<?php echo the_permalink(); ?>" method='POST'>
-                            <input name='action' value='email_send' type='hidden'>
-                            <input name='from' type='text' placeholder='Name' required/>
-                            <input name='email' type='email' placeholder='Email' required/>
-                            <textarea name='message' placeholder='Hello Andrew, I love your portfolio! etc. etc.' required></textarea>
-                            <span><input class='digit' name='human' type='number' placeholder='4' /> + 2 = 6</span>
-                            <input type='submit' value='Send Message' />
-                            <?php wp_nonce_field('email_send'); ?>
-                            </form>
+                            <p class="end"></p>
                         <?php } else {
                             AndrewDevPortfolio\Plugin\Portfolio::verify_post();
                         } ?>

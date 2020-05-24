@@ -26,9 +26,9 @@ class Portfolio {
 
     private static function mail_send($from, $email, $message) {
         $to = get_option('admin_email');
-        $subject = "A message on your Portfolio from: " . $from;
+        $subject = "A message on your portfolio from: " . $from;
         $message = $message;
-        $headers[] = 'From: ' . $from . ' <' . $email . '>';
+        $headers[] = 'From:' . $email;
 
         wp_mail( $to, $subject, $message, $headers );
     }
